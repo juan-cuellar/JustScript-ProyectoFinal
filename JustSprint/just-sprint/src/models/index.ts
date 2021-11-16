@@ -7,3 +7,4 @@ export * from './credenciales.model';
 export * from './solicitud.model';
 export * from './estado.model';
 export * from './resultado-solicitud.model';
+export * from './co-deudor.model';

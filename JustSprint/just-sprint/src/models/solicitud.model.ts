@@ -39,6 +39,31 @@ export class Solicitud extends Entity {
   })
   imagen: string;
 
+  @property({
+    type: 'boolean',
+    required: true,
+  })
+  co_deudor: boolean;
+
+  @property({
+    type: 'string',
+  })
+  coDeudorId?: string;
+
+  @property({
+    type: 'string',
+  })
+  estadoId?: string;
+
+  @property({
+    type: 'string',
+  })
+  registroClientesId?: string;
+
+  @property({
+    type: 'string',
+  })
+  vehiculosId?: string;
 
   constructor(data?: Partial<Solicitud>) {
     super(data);

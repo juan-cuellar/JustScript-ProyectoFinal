@@ -2,7 +2,7 @@ import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Solicitud} from './solicitud.model';
 
 @model()
-export class RegistroClientes extends Entity {
+export class CoDeudor extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -38,18 +38,6 @@ export class RegistroClientes extends Entity {
     type: 'string',
     required: true,
   })
-  departamento: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  ciudad: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   telefono: string;
 
   @property({
@@ -58,16 +46,22 @@ export class RegistroClientes extends Entity {
   })
   direccion: string;
 
+  @property({
+    type: 'string',
+    required: true,
+  })
+  carta_laboral: string;
+
   @hasMany(() => Solicitud)
   solicituds: Solicitud[];
 
-  constructor(data?: Partial<RegistroClientes>) {
+  constructor(data?: Partial<CoDeudor>) {
     super(data);
   }
 }
 
-export interface RegistroClientesRelations {
+export interface CoDeudorRelations {
   // describe navigational properties here
 }
 
-export type RegistroClientesWithRelations = RegistroClientes & RegistroClientesRelations;
+export type CoDeudorWithRelations = CoDeudor & CoDeudorRelations;
