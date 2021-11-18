@@ -14,12 +14,6 @@ export class ResultadoSolicitud extends Entity {
     type: 'string',
     required: true,
   })
-  id_solicitud: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   comentario: string;
 
   @belongsTo(() => Solicitud)

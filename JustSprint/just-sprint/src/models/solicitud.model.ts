@@ -19,24 +19,6 @@ export class Solicitud extends Entity {
     type: 'string',
     required: true,
   })
-  id_vehiculo: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  id_registroCliente: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
-  id_estado: string;
-
-  @property({
-    type: 'string',
-    required: true,
-  })
   imagen: string;
 
   @property({

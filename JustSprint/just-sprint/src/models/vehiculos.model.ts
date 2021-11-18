@@ -37,11 +37,6 @@ export class Vehiculos extends Entity {
   })
   direccion: string;
 
-  @property({
-    type: 'string',
-    required: true,
-  })
-  id_persona: string;
 
   @property({
     type: 'boolean',

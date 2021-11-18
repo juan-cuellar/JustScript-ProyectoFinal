@@ -47,12 +47,6 @@ export class Persona extends Entity {
   direccion: string;
 
   @property({
-    type: 'string',
-    required: true,
-  })
-  id_roles: string;
-
-  @property({
     type: 'boolean',
     required: true,
   })
