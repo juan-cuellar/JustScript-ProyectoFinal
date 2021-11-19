@@ -24,7 +24,7 @@ export class Persona extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   identificacion: string;
 
@@ -42,15 +42,22 @@ export class Persona extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   direccion: string;
 
   @property({
     type: 'boolean',
-    required: true,
+    required: false,
   })
   estado: boolean;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
+  clave: string;
+
 
   @property({
     type: 'string',
