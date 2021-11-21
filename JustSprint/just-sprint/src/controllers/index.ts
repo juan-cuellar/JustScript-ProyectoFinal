@@ -14,3 +14,6 @@ export * from './solicitud.controller';
 export * from './registro-clientes.controller';
 export * from './co-deudor.controller';
 export * from './resultado-solicitud.controller';
+export * from './solicitud-registro-clientes.controller';
+export * from './solicitud-vehiculos.controller';
+export * from './solicitud-co-deudor.controller';
