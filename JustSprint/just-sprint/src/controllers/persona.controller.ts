@@ -18,13 +18,13 @@ import {
   response,
   HttpErrors,
 } from '@loopback/rest';
-import {Persona} from '../models';
+import {Credenciales, Persona} from '../models';
 import {PersonaRepository} from '../repositories';
 import { service } from '@loopback/core';
 import { AutenticacionService } from '../services';
 const fetch = require("node-fetch");
 import {Llaves} from '../config/llaves';
-import {Credenciales} from '../models';
+import {authenticate} from '@loopback/authentication';
 
 export class PersonaController {
   constructor(
@@ -45,14 +45,14 @@ export class PersonaController {
   async identificarPersona(
     @requestBody() credenciales: Credenciales
   ) {
-    let p = await this.servicioAutenticacion.IdentificarPersona(credenciales.correo, credenciales.contrasena);
+    let p = await this.servicioAutenticacion.IdentificarPersona(credenciales.usuario, credenciales.clave);
     if (p) {
       let token = this.servicioAutenticacion.GenerarTokenJWT(p);
       return {
         datos: {
           nombre: p.nombre,
           correo: p.correo,
-          id: p.id
+          id: p.id,
         },
         tk: token
       }
@@ -61,9 +61,8 @@ export class PersonaController {
     }
 
   }
-  
 
-
+  @authenticate("Admin")
   @post('/personas')
   @response(200, {
     description: 'Persona model instance',

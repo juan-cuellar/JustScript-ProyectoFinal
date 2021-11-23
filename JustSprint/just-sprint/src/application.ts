@@ -9,6 +9,9 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import path from 'path';
 import {MySequence} from './sequence';
+import {AdminEstrategia} from './strategies/Admin.strategy';
+import {AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
+import {AsesorEstrategia} from './strategies/Asesor.strategy';
 
 export {ApplicationConfig};
 
@@ -40,5 +43,12 @@ export class JustSprintApplication extends BootMixin(
         nested: true,
       },
     };
+    registerAuthenticationStrategy(this, AdminEstrategia);
+    this.component(AuthenticationComponent);
+
+    registerAuthenticationStrategy(this, AsesorEstrategia);
+    this.component(AuthenticationComponent);
+
   }
 }
+

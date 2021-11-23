@@ -8,3 +8,4 @@ export * from './resultado-solicitud.repository';
 export * from './roles.repository';
 export * from './solicitud.repository';
 export * from './vehiculos.repository';
+export * from './roles.repository';

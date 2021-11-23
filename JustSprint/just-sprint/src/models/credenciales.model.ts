@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
 @model()
-export class Roles extends Entity {
+export class Credenciales extends Entity {
   @property({
     type: 'string',
     id: true,
@@ -13,21 +13,22 @@ export class Roles extends Entity {
     type: 'string',
     required: true,
   })
-  roles: string;
+  usuario: string;
 
   @property({
     type: 'string',
+    required: true,
   })
-  personaId?: string;
+  clave: string;
 
 
-  constructor(data?: Partial<Roles>) {
+  constructor(data?: Partial<Credenciales>) {
     super(data);
   }
 }
 
-export interface RolesRelations {
+export interface CredencialesRelations {
   // describe navigational properties here
 }
 
-export type RolesWithRelations = Roles & RolesRelations;
+export type CredencialesWithRelations = Credenciales & CredencialesRelations;

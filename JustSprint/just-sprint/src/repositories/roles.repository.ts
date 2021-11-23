@@ -1,22 +1,16 @@
-import {inject, Getter} from '@loopback/core';
-import {DefaultCrudRepository, repository, HasOneRepositoryFactory} from '@loopback/repository';
+import {inject} from '@loopback/core';
+import {DefaultCrudRepository} from '@loopback/repository';
 import {MongodbDataSource} from '../datasources';
-import {Roles, RolesRelations, Persona} from '../models';
-import {PersonaRepository} from './persona.repository';
+import {Roles, RolesRelations} from '../models';
 
 export class RolesRepository extends DefaultCrudRepository<
   Roles,
   typeof Roles.prototype.id,
   RolesRelations
 > {
-
-  public readonly persona: HasOneRepositoryFactory<Persona, typeof Roles.prototype.id>;
-
   constructor(
-    @inject('datasources.mongodb') dataSource: MongodbDataSource, @repository.getter('PersonaRepository') protected personaRepositoryGetter: Getter<PersonaRepository>,
+    @inject('datasources.mongodb') dataSource: MongodbDataSource,
   ) {
     super(Roles, dataSource);
-    this.persona = this.createHasOneRepositoryFactoryFor('persona', personaRepositoryGetter);
-    this.registerInclusionResolver('persona', this.persona.inclusionResolver);
   }
 }

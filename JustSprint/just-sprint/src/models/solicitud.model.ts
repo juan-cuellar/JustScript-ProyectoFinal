@@ -1,7 +1,7 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {belongsTo, Entity, model, property} from '@loopback/repository';
+import {CoDeudor} from './co-deudor.model';
 import {RegistroClientes} from './registro-clientes.model';
 import {Vehiculos} from './vehiculos.model';
-import {CoDeudor} from './co-deudor.model';
 
 @model()
 export class Solicitud extends Entity {
@@ -26,14 +26,17 @@ export class Solicitud extends Entity {
 
   @property({
     type: 'boolean',
-    required: true,
+    required: false,
   })
   co_deudor: boolean;
+
+
   @property({
     type: 'string',
   })
   estadoId?: string;
 
+  
   @belongsTo(() => RegistroClientes)
   registroClientesId: string;
 

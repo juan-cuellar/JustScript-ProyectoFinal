@@ -1,3 +1,4 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -25,7 +26,7 @@ export class SolicitudController {
     @repository(SolicitudRepository)
     public solicitudRepository : SolicitudRepository,
   ) {}
-
+  @authenticate("Asesor")
   @post('/solicituds')
   @response(200, {
     description: 'Solicitud model instance',

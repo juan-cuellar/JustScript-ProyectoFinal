@@ -48,15 +48,17 @@ export class AutenticacionService {
       data: {
         id: persona.id,
         correo: persona.correo,
-        nombre: persona.nombre + " " + persona.apellido
+        nombre: persona.nombre + " " + persona.apellido,
+        roles: persona.nombreRol,
+        telefono: persona.telefono
       }
     },
       Llaves.claveJWT);
     return token;
   }
-  
-  
-  
+
+
+
   ValidarTokenJWT(token: string) {
     try {
       let datos = jwt.verify(token, Llaves.claveJWT);
@@ -65,7 +67,7 @@ export class AutenticacionService {
       return false;
     }
   }
-    
+
 
   }
 
