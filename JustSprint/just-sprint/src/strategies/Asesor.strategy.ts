@@ -22,7 +22,7 @@ export class AsesorEstrategia implements AuthenticationStrategy{
     if(token){
       let datos = this.AutenticacionServicio.ValidarTokenJWT(token)
       if(datos){
-        if(datos.data.roles ="Asesor"){
+        if(datos.data.roles == "Asesor"){
           return datos
         }else{
           throw new HttpErrors[401]("No esta autorizado para realizar la acción solicitada")

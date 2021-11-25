@@ -1,3 +1,4 @@
+import {authenticate} from '@loopback/authentication';
 import {
   Count,
   CountSchema,
@@ -25,7 +26,8 @@ export class CoDeudorController {
     @repository(CoDeudorRepository)
     public coDeudorRepository : CoDeudorRepository,
   ) {}
-
+  
+  @authenticate("Asesor")
   @post('/co-deudors')
   @response(200, {
     description: 'CoDeudor model instance',

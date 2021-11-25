@@ -22,7 +22,7 @@ export class AdminEstrategia implements AuthenticationStrategy{
     if(token){
       let datos = this.AutenticacionServicio.ValidarTokenJWT(token)
       if(datos){
-        if(datos.data.roles ="Admin"){
+        if(datos.data.roles =="Admin"){
           return datos
         }else{
           throw new HttpErrors[401]("No esta autorizado para realizar la acción solicitada")
@@ -35,6 +35,6 @@ export class AdminEstrategia implements AuthenticationStrategy{
 
     }
   }
-
+  
 }
 

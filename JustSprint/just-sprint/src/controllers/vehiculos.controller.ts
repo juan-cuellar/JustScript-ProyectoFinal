@@ -27,7 +27,7 @@ export class VehiculosController {
     public vehiculosRepository : VehiculosRepository,
   ) {}
 
-  @authenticate("Asesor")
+  //@authenticate("Asesor")
   @post('/vehiculos')
   @response(200, {
     description: 'Vehiculos model instance',
