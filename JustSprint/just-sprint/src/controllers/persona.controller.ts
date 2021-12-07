@@ -62,7 +62,7 @@ export class PersonaController {
 
   }
 
-  @authenticate("Admin")
+  // @authenticate("Admin")
   @post('/personas')
   @response(200, {
     description: 'Persona model instance',
@@ -161,6 +161,7 @@ export class PersonaController {
   ): Promise<Persona> {
     return this.personaRepository.findById(id, filter);
   }
+  
 
   @patch('/personas/{id}')
   @response(204, {

@@ -15,5 +15,3 @@ export * from './resultado-solicitud.controller';
 export * from './solicitud-registro-clientes.controller';
 export * from './solicitud-vehiculos.controller';
 export * from './solicitud-co-deudor.controller';
-export * from './persona-roles.controller';
-export * from './roles.controller';

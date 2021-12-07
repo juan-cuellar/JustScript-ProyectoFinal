@@ -1,7 +1,6 @@
 export * from './formulario-contacto.model';
 export * from './persona.model';
 export * from './vehiculos.model';
-export * from './roles.model';
 export * from './registro-clientes.model';
 export * from './credenciales.model';
 export * from './solicitud.model';
