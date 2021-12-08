@@ -11,7 +11,6 @@ export class VehiculosRepository extends DefaultCrudRepository<
   VehiculosRelations
 > {
 
-  public readonly personas: HasManyRepositoryFactory<Persona, typeof Vehiculos.prototype.id>;
 
   public readonly solicituds: HasManyRepositoryFactory<Solicitud, typeof Vehiculos.prototype.id>;
 
@@ -25,7 +24,6 @@ export class VehiculosRepository extends DefaultCrudRepository<
     this.registerInclusionResolver('persona', this.persona.inclusionResolver);
     this.solicituds = this.createHasManyRepositoryFactoryFor('solicituds', solicitudRepositoryGetter,);
     this.registerInclusionResolver('solicituds', this.solicituds.inclusionResolver);
-    this.personas = this.createHasManyRepositoryFactoryFor('personas', personaRepositoryGetter,);
-    this.registerInclusionResolver('personas', this.personas.inclusionResolver);
+
   }
 }

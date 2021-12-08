@@ -36,7 +36,7 @@ export class Solicitud extends Entity {
   })
   estadoId?: string;
 
-  
+
   @belongsTo(() => RegistroClientes)
   registroClientesId: string;
 

@@ -26,8 +26,8 @@ export class CoDeudorController {
     @repository(CoDeudorRepository)
     public coDeudorRepository : CoDeudorRepository,
   ) {}
-  
-  @authenticate("Asesor")
+
+  //@authenticate("Asesor")
   @post('/co-deudors')
   @response(200, {
     description: 'CoDeudor model instance',

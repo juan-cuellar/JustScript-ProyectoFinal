@@ -12,11 +12,10 @@ export class Vehiculos extends Entity {
   id?: string;
 
   @property({
-    type: 'array',
-    itemType: 'string',
+    type: 'string',
     required: true,
   })
-  tipoVehiculo: string[];
+  tipoVehiculo: string;
 
 
   @property({
@@ -58,7 +57,7 @@ export class Vehiculos extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   enlaceVideo: string;
 
