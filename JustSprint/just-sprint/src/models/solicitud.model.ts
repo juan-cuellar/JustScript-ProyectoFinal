@@ -13,8 +13,21 @@ export class Solicitud extends Entity {
   id?: string;
 
   @property({
-    type: 'date',
-    required: true,
+    type: 'string',
+    required: false,
+  })
+  clienteid: string;
+
+  @property({
+    type: 'string',
+    required: false,
+  })
+  productoid: string;
+
+
+  @property({
+    type: 'string',
+    required: false,
   })
   fecha: string;
 
@@ -30,9 +43,9 @@ export class Solicitud extends Entity {
   })
   co_deudor: boolean;
 
-
   @property({
     type: 'string',
+    required: false,
   })
   estadoId?: string;
 

@@ -38,10 +38,10 @@ export class Vehiculos extends Entity {
 
 
   @property({
-    type: 'boolean',
+    type: 'string',
     required: true,
   })
-  tipoOferta: boolean;
+  tipoOferta: string;
 
   @property({
     type: 'number',
